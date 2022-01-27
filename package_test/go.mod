@@ -1,4 +1,4 @@
-module github.com/tkxkd0159/go-server/package_test
+module github.com/tkxkd0159/go-pg/package_test
 
 go 1.16
 

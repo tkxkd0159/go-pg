@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 
-	"github.com/tkxkd0159/go-server/package_test/pkg1"
-	sub2 "github.com/tkxkd0159/go-server/package_test/pkg1/pkg2"
-	newsub1 "github.com/tkxkd0159/go-server/package_test/pkg3"
+	"github.com/tkxkd0159/go-pg/package_test/pkg1"
+	sub2 "github.com/tkxkd0159/go-pg/package_test/pkg1/pkg2"
+	newsub1 "github.com/tkxkd0159/go-pg/package_test/pkg3"
 
 	"golang.org/x/example/stringutil"
 )
