@@ -1,3 +1,3 @@
-module hfgo
+module hf-go
 
 go 1.17
