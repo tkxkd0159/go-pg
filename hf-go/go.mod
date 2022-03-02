@@ -2,4 +2,4 @@ module hf-go
 
 go 1.17
 
-retract v0.1.0
+retract v1.0.0
