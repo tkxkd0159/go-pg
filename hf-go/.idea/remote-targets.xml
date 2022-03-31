@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteTargetsManager">
+    <targets>
+      <target name="golang:1.17.8-ubuntu-focal" type="docker" uuid="72e728d3-af24-43d3-9157-3fbe6fc8a322">
+        <config>
+          <option name="targetPlatform">
+            <TargetPlatform />
+          </option>
+          <option name="buildImageConfig">
+            <BuildImageConfig>
+              <option name="builtImageTag" value="gofocal:1.17.8" />
+              <option name="dockerFile" value="Dockerfile" />
+              <option name="rebuildEveryTime" value="false" />
+            </BuildImageConfig>
+          </option>
+        </config>
+        <ContributedStateBase type="GoLanguageRuntime">
+          <config>
+            <option name="compiledExecutablesVolume">
+              <VolumeState>
+                <option name="targetSpecificBits">
+                  <map>
+                    <entry key="mountAsVolume" value="false" />
+                  </map>
+                </option>
+              </VolumeState>
+            </option>
+            <option name="goPath" value="/go" />
+            <option name="goRoot" value="/go/bin/go" />
+            <option name="goVersion" value="go1.17.8 linux/amd64" />
+            <option name="projectSourcesVolume">
+              <VolumeState>
+                <option name="targetSpecificBits">
+                  <map>
+                    <entry key="mountAsVolume" value="false" />
+                  </map>
+                </option>
+              </VolumeState>
+            </option>
+          </config>
+        </ContributedStateBase>
+      </target>
+    </targets>
+  </component>
+</project>

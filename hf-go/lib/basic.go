@@ -1,4 +1,4 @@
-package jslib
+package lib
 
 import "fmt"
 

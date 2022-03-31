@@ -2,7 +2,10 @@ package main
 
 import (
 	"fmt"
-	jslib "hfgo/lib"
+	jslib "hf-go/lib"
+	"log"
+	"os"
+	"runtime"
 )
 
 func main() {
@@ -10,4 +13,13 @@ func main() {
 	fmt.Printf("%+v\n", jslib.Types())
 	fmt.Println(jslib.ReturnMulti())
 	fmt.Println(jslib.ReturnMulti2())
+
+	myOS, myArch, gover := runtime.GOOS, runtime.GOARCH, runtime.Version()
+	fmt.Printf("%s / %s / %s ! \n", myOS, myArch, gover)
+
+	path, err := os.Getwd()
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(path)
 }

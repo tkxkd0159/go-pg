@@ -1,1 +1,1 @@
-package jslib
+package lib
