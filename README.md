@@ -4,8 +4,6 @@ Implement the regular backend server written by Go
 When your code imports packages contained in other modules, you manage those dependencies through your code's own module.  
 Create `go.mod` files:
   
-`go install`의 경우 메인 함수가 있는 go파일이 포함되어 있는 경우 바이너리가 `$GOPATH/bin`에 생성됨. main이 없는 라이브러리 일 경우 `<file_name>.a` 생성  
-`go build`의 경우 바이너리를 해당 위치에 만듬. `go install`과 달리 캐싱을 안함
 ```bash
 go mod init <github_src_path> # github.com/tkxkd0159/go-chain
 go list -m all                # current module's dependencies
