@@ -10,7 +10,7 @@ import (
 
 func main() {
 	fmt.Println(jslib.Hello())
-	fmt.Printf("%+v\n", jslib.Types())
+	fmt.Printf("%+v\n", jslib.GetAllTypes())
 	fmt.Println(jslib.ReturnMulti())
 	fmt.Println(jslib.ReturnMulti2())
 

@@ -14,7 +14,7 @@ type Alltype struct {
 	arr []string
 }
 
-func Types() Alltype {
+func GetAllTypes() Alltype {
 	at := Alltype{}
 	at.num = 30
 	at.dot = 32.77
