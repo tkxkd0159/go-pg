@@ -1,0 +1,2 @@
+INFO: 2022/04/04 12:50:22 main.go:25: Custom logger test
+INFO: 2022/04/04 12:59:10 main.go:25: Custom logger test
