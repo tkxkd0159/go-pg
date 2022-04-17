@@ -1,3 +1,3 @@
 module github.com/tkxkd0159/go-pg/go-nomad
 
-go 1.17
+go 1.18

@@ -79,6 +79,10 @@ fabric.properties
 *.so
 *.dylib
 
+
+### Etc
+log/
+
 # Test binary, built with `go test -c`
 *.test
 

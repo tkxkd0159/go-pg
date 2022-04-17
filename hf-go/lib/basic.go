@@ -42,3 +42,10 @@ func ReturnMulti() (a int, b float64, c string, d []string) {
 func ReturnMulti2() (int, float64, string, []int) {
 	return 7, 7.7, "seven", []int{12, 78, 50}
 }
+
+func IntMin(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
