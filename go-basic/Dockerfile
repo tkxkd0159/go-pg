@@ -11,6 +11,7 @@ RUN curl https://dl.google.com/go/go1.17.8.linux-amd64.tar.gz -o go.tar.gz && \
     mv go /go
 WORKDIR /
 RUN rm -rf tmp
+WORKDIR /app
 
 ENV GOPATH /go
 ENV PATH $PATH:$GOPATH/bin

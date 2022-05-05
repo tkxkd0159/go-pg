@@ -1,6 +1,12 @@
-package lib
+package hfgolib
 
-import "fmt"
+import (
+	"fmt"
+	"io/ioutil"
+	"log"
+	"os"
+	"runtime"
+)
 
 func Hello() string {
 	return "Let's learn Golang wiht Head First Go"
@@ -48,4 +54,24 @@ func IntMin(a, b int) int {
 		return a
 	}
 	return b
+}
+
+func PrintSystemInfo() {
+	myOS, myArch, gover := runtime.GOOS, runtime.GOARCH, runtime.Version()
+	fmt.Printf("%s / %s / %s ! \n", myOS, myArch, gover)
+
+	path, err := os.Getwd()
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Printf("CWD is %s \n", path)
+
+	files, err := ioutil.ReadDir(".")
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println("\n", "File list in ", path)
+	for _, file := range files {
+		fmt.Println(file.Name(), file.IsDir())
+	}
 }

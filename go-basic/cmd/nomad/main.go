@@ -8,8 +8,8 @@ import (
 )
 
 import (
-	"github.com/tkxkd0159/go-pg/go-nomad"
-	"github.com/tkxkd0159/go-pg/go-nomad/basic"
+	mygo "github.com/tkxkd0159/go-pg/go-basic"
+	"github.com/tkxkd0159/go-pg/go-basic/nomadlib"
 )
 
 var myLogger *log.Logger
@@ -31,5 +31,5 @@ func main() {
 	myLogger.Println("Custom logger test")
 	fmt.Println("Start")
 	fmt.Println(mygo.Mydlds())
-	basic.WelcomeBasic()
+	nomadlib.WelcomeBasic()
 }

@@ -1,4 +1,4 @@
-package lib
+package hfgolib
 
 func ForUnicode(word string) map[string]rune {
 	wordMap := make(map[string]rune)
