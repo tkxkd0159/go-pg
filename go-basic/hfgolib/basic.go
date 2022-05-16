@@ -56,22 +56,27 @@ func IntMin(a, b int) int {
 	return b
 }
 
-func PrintSystemInfo() {
+type dirFlag bool
+
+func PrintSystemInfo(flag dirFlag) {
 	myOS, myArch, gover := runtime.GOOS, runtime.GOARCH, runtime.Version()
 	fmt.Printf("%s / %s / %s ! \n", myOS, myArch, gover)
 
-	path, err := os.Getwd()
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Printf("CWD is %s \n", path)
+	if flag == true {
+		path, err := os.Getwd()
+		if err != nil {
+			log.Println(err)
+		}
+		fmt.Printf("CWD is %s \n", path)
 
-	files, err := ioutil.ReadDir(".")
-	if err != nil {
-		log.Fatal(err)
+		files, err := ioutil.ReadDir(".")
+		if err != nil {
+			log.Fatal(err)
+		}
+		fmt.Println("\n", "File list in ", path)
+		for _, file := range files {
+			fmt.Println(file.Name(), file.IsDir())
+		}
 	}
-	fmt.Println("\n", "File list in ", path)
-	for _, file := range files {
-		fmt.Println(file.Name(), file.IsDir())
-	}
+
 }

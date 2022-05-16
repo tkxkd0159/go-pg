@@ -9,6 +9,45 @@ var (
 	CommonStr = "Lucky"
 )
 
+func TestBasicLoop(t *testing.T) {
+	i := 1
+	for i <= 3 {
+		i = i + 1
+	}
+	if i != 4 {
+		t.Errorf("First loop is wrong")
+	}
+
+	for j := 7; j <= 9; j++ {
+		if j == 9 {
+			t.Logf("Second loop is right, j == %d", j)
+		}
+	}
+
+	k := 0
+	for {
+		k += 1
+		if k == 4 {
+			break
+		}
+		if k == 4 {
+			t.Errorf("Third loop is wrong")
+		}
+	}
+
+	chkRemain := [3]int{0, 2, 4}
+	for n := 0; n <= 5; n++ {
+		if n%2 == 0 {
+			continue
+		}
+		for _, elem := range chkRemain {
+			if n == elem {
+				t.Errorf("Fourth loop is wrong")
+			}
+		}
+	}
+}
+
 func TestForUnicode(t *testing.T) {
 	var _ = CommonNum
 	var _ = CommonStr
