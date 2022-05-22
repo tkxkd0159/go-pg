@@ -1,6 +1,7 @@
-package hfgolib
+package hfgolib_test
 
 import (
+	"github.com/tkxkd0159/go-pg/go-basic/hfgolib"
 	"testing"
 )
 
@@ -52,7 +53,7 @@ func TestForUnicode(t *testing.T) {
 	var _ = CommonNum
 	var _ = CommonStr
 
-	tests := ForUnicode("abc가나다")
+	tests := hfgolib.ForUnicode("abc가나다")
 	ans := []struct {
 		codePoint rune
 		char      string
@@ -74,6 +75,6 @@ func TestForUnicode(t *testing.T) {
 
 func BenchmarkForUnicode(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		ForUnicode("abc가나다")
+		hfgolib.ForUnicode("abc가나다")
 	}
 }

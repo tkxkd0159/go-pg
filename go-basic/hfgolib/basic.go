@@ -13,22 +13,31 @@ func Hello() string {
 }
 
 type Alltype struct {
-	num int64
-	dot float64
-	tf  bool
-	str string
-	arr []string
+	Num int64
+	Dot float64
+	Tf  bool
+	Str string
+	Arr []string
+}
+
+func (a *Alltype) AllAdd() []string {
+	first := fmt.Sprintf("%f", float64(a.Num)+a.Dot)
+	second := fmt.Sprintf("%t", a.Tf)
+	third := first + second + a.Str
+	fourth := append(a.Arr, third)
+
+	return fourth
 }
 
 func GetAllTypes() Alltype {
 	at := Alltype{}
-	at.num = 30
-	at.dot = 32.77
-	at.tf = true
-	at.str = "all type strcut"
-	at.arr = append(at.arr, "I am")
-	at.arr = append(at.arr, "returning")
-	at.arr = append(at.arr, "all type struct")
+	at.Num = 30
+	at.Dot = 32.77
+	at.Tf = true
+	at.Str = "all type strcut"
+	at.Arr = append(at.Arr, "I am")
+	at.Arr = append(at.Arr, "returning")
+	at.Arr = append(at.Arr, "all type struct")
 
 	return at
 }
