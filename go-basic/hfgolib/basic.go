@@ -8,10 +8,6 @@ import (
 	"runtime"
 )
 
-func Hello() string {
-	return "Let's learn Golang wiht Head First Go"
-}
-
 type Alltype struct {
 	Num int64
 	Dot float64
@@ -42,8 +38,8 @@ func GetAllTypes() Alltype {
 	return at
 }
 
-func PrintSlice(s []int) {
-	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
+func PrintSlice(s []int) string {
+	return fmt.Sprintf("len=%d cap=%d %v\n", len(s), cap(s), s)
 }
 
 func ReturnMulti() (a int, b float64, c string, d []string) {
