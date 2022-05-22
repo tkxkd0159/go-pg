@@ -12,7 +12,7 @@ func main() {
 	fmt.Println(jslib.ReturnMulti2())
 	fmt.Printf("\n")
 
-	jslib.PrintSystemInfo()
+	jslib.PrintSystemInfo(false)
 
 	i := 1
 	for i <= 3 {
