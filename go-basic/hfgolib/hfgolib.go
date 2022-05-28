@@ -4,5 +4,8 @@
 
 // Package hfgolib provides practical functions to use.
 //
-// This is entrypoint of hfgolib
+// This is function example in overview section
+//  func main() {
+//    fmt.Println("test function")
+//  }
 package hfgolib
