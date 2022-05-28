@@ -38,10 +38,6 @@ func GetAllTypes() Alltype {
 	return at
 }
 
-func PrintSlice(s []int) string {
-	return fmt.Sprintf("len=%d cap=%d %v\n", len(s), cap(s), s)
-}
-
 func ReturnMulti() (a int, b float64, c string, d []string) {
 	a = 7
 	b = 7.7

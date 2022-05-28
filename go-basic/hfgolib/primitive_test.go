@@ -15,11 +15,3 @@ func TestIntMinBasic(t *testing.T) {
 		t.Errorf("IntMin(-2, 2) = %d; want -2", ans2)
 	}
 }
-
-func TestPrintSlice(t *testing.T) {
-	got := hfgolib.PrintSlice([]int{1, 2, 3, 4, 5})
-	exp := "len=5 cap=5 [1 2 3 4 5]\n"
-	if got != exp {
-		t.Error("TestPrintSlice is failed")
-	}
-}
