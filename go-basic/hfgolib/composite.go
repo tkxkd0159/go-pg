@@ -3,6 +3,7 @@ package hfgolib
 import (
 	"fmt"
 	"os"
+	"reflect"
 )
 
 func GenArr() ([3]any, [5]any) {
@@ -45,8 +46,15 @@ func GenMap() (map[any]any, map[any]any) {
 
 type StructSample struct {
 	Elem1 string
-	elem2 int
-	elem3 bool
+	Elem2 int
+	Elem3 bool
+}
+
+func (s *StructSample) SetElem1(e any) {
+	if reflect.TypeOf(e).String() == "string" {
+		s.Elem1 = e.(string)
+	}
+
 }
 
 func (s StructSample) ShowMe() string {
@@ -62,7 +70,7 @@ func GenStruct() (any, StructSample) {
 	struct1.word = "basic struct"
 
 	customStruct := new(StructSample)
-	customStruct2 := StructSample{Elem1: "literal struct", elem2: 10}
+	customStruct2 := StructSample{Elem1: "literal struct", Elem2: 10}
 	return customStruct, customStruct2
 }
 
@@ -73,3 +81,76 @@ func CliArgs() []string {
 func PrintSlice(s []int) string {
 	return fmt.Sprintf("len=%d cap=%d %v\n", len(s), cap(s), s)
 }
+
+type PrivateFields struct {
+	elem1 int
+	elem2 int
+	Elem3 int
+}
+
+func (ps *PrivateFields) SetElem1(num int) {
+	ps.elem1 = num
+}
+
+func (ps *PrivateFields) Elem1() int {
+	return ps.elem1
+}
+
+func (ps PrivateFields) SetElem3(num int) int {
+	return ps.Elem3 + num
+}
+
+// ## interface ##
+
+type Recorder struct {
+	List    []string
+	Battery int
+	mic     bool
+}
+
+func (r *Recorder) ToggleMic() {
+	if r.mic == false {
+		r.mic = true
+	} else {
+		r.mic = false
+	}
+}
+
+func (r Recorder) Play() {
+	for _, rec := range r.List {
+		fmt.Printf("%s is playing now", rec)
+	}
+}
+
+func (r Recorder) Stop() {
+	fmt.Println("Stop recoreder")
+}
+
+type Player struct {
+	List    []string
+	battery int
+}
+
+func (p Player) Play() {
+	for _, song := range p.List {
+		fmt.Printf("%s is playing now", song)
+	}
+}
+
+func (p Player) Stop() {
+	fmt.Println("Stop recoreder")
+}
+
+func (p *Player) ChargeBattery(volt int) {
+	p.battery += volt
+}
+
+type MediaMachine interface {
+	Play()
+	Stop()
+}
+
+var (
+	_ MediaMachine = Recorder{}
+	_ MediaMachine = &Player{}
+)

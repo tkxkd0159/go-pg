@@ -3,9 +3,11 @@ package hfgolib
 import (
 	"bufio"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"math/rand"
 	"os"
+	"path/filepath"
 	"strconv"
 	"strings"
 	"time"
@@ -18,6 +20,23 @@ func ForUnicode(word string) map[string]rune {
 	}
 
 	return wordMap
+}
+
+func ScanDir(path string) error {
+	fmt.Println(path)
+	files, err := ioutil.ReadDir(path)
+	if err != nil {
+		panic(err)
+	}
+	for _, f := range files {
+		fpath := filepath.Join(path, f.Name())
+		if f.IsDir() {
+			ScanDir(fpath)
+		} else {
+			fmt.Println(fpath)
+		}
+	}
+	return nil
 }
 
 func GuessGame() bool {
