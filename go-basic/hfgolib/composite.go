@@ -57,8 +57,26 @@ func (s *StructSample) SetElem1(e any) {
 
 }
 
-func (s StructSample) ShowMe() string {
-	return fmt.Sprintf("Hi, %#v", s)
+func (ss StructSample) SetE1(s string) StructSample {
+	ss.Elem1 = s
+	return ss
+}
+
+func (ss *StructSample) SetE1Wptr(s string) {
+	ss.Elem1 = s
+}
+
+func (ss StructSample) SetE2(i int) StructSample {
+	ss.elem2 = i
+	return ss
+}
+
+func (ss *StructSample) SetE2Wptr(i int) {
+	ss.elem2 = i
+}
+
+func (ss StructSample) ShowMe() string {
+	return fmt.Sprintf("Hi, %#v", ss)
 }
 
 func GenStruct() (any, StructSample) {
